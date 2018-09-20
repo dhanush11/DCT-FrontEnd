@@ -7,11 +7,21 @@
     <title>DCT</title>
 </head>
 <body>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-      <h2>Rockstar for the day</h2><br/>
-      <h2 id = "result"></h2><br/>
-      <button id = "btn">Generate</button>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./winwheel/TweenMax.min.js"></script>
+  <script src="./winwheel/Winwheel.min.js"></script>
+  <h2>DCT WHEEL</h2>
 
-    <script src="script.js"> </script>
+  <label for="batch">Select Batch</label>
+  <select id="batch" name="batch">
+      <option value="">Select</option>
+      <option value="5ba378c01b3c2f0670381e69">MERN-JUNE2018</option>
+      <option value="5ba3843a929c0d0694f5deb6">MERN-JULY2018</option>
+  </select><br/><br/>
+
+  <canvas id= "canvas" height = "400" width = "400"></canvas><br/>
+  <input type="button" value = "spin" id = "spin" onclick="podiumWheel.startAnimation()"/>
+
+  <script src="script.js"> </script>
 </body>
 </html>
