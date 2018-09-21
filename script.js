@@ -6,6 +6,19 @@ var result = [];
 var parts = [];
 var style =['#FF3B58', '#79D3B1', '#FEF027', '#E94E77', '#3A8ECF', '#F7752C', '#EB007F', '#DE000F', '#31AE88','#33E46D','#CDFC43','#FF5039','#eae56f','#89f26e']
 
+window.addEventListener('load', function(){
+  axios.get('http://localhost:3000/batches').then((response) => {
+    let batches = response.data;
+    batches.forEach(function(batch){
+        var optionHandle = document.createElement('option');
+        var optionHandleText = document.createTextNode(batch.name);
+        optionHandle.setAttribute("value", batch._id)
+        optionHandle.appendChild(optionHandleText);
+        selectHandle.appendChild(optionHandle);
+    })
+  })
+})
+
 selectHandle.addEventListener('change', function(){
   result = [];
   parts = [];
