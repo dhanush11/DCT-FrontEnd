@@ -9,9 +9,9 @@ var style =['#FF3B58', '#79D3B1', '#FEF027', '#E94E77', '#3A8ECF', '#F7752C', '#
 selectHandle.addEventListener('change', function(){
   result = [];
   parts = [];
-  axios.get('http://localhost:3000/students').then((response) => {
-    let students = response.data;
-  students.forEach((student) => {
+  axios.get(`http://localhost:3000/batches/${selectHandle.value}`).then((response) => {
+    let batch = response.data;
+  batch.students.forEach((student) => {
     if(selectHandle.value == student.batches[student.batches.length-1]){
       result.push(student.name);
     }
